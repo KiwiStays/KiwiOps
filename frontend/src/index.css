@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... */
+/* Hide scrollbar in Chrome, Safari */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar in Firefox */
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+  
+
+
+/* Custom styles for the audio player */
+.rhap_container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.rhap_progress-section {
+  margin-bottom: 0 !important;
+}
+
+.rhap_controls-section {
+  margin-top: 0 !important;
+}
+
+.rhap_main-controls-button {
+  color: #4B5563 !important;
+}
+
+.rhap_progress-bar {
+  background-color: #E5E7EB !important;
+}
+
+.rhap_progress-indicator {
+  background-color: #3B82F6 !important;
+}
+
+.rhap_progress-filled {
+  background-color: #3B82F6 !important;
+}
