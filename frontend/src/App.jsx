@@ -2,7 +2,7 @@ import react from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Homepage from './Pages/Homepage';
-import PropertyForm from './Pages/Propertyform';
+import PropertyForm from './Pages/PropertyForm';
 import Roomdahboard from './Pages/Roomdahboard';
 import RoomChecklist from './Pages/RoomChecklist';
 import Editform from './Pages/Editform';
