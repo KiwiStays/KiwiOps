@@ -7,7 +7,7 @@ import PropertyRouter from "../routes/Property.route.js";
 const app = express();
 app.use(express.json({limit: '10mb'}));
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://kiwiops.in", "https://api.kiwiops.in"],
     credentials: true
 }));
 
