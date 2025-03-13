@@ -4,7 +4,7 @@ import { Plus, X, Upload, Building, Home, Users, Camera, CheckCircle, PlusCircle
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
-export default function PropertyForm() {
+export default function Propertyform() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
