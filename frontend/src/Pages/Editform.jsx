@@ -13,7 +13,7 @@ const Editform = () => {
   const [showConfirmation, setShowConfirmation] = useState(false)
 
   const [formData, setFormData] = useState({
-    PlaceName: "",
+    placeName: "",
     buildingName: "",
     buildingPic: null,
     propertyCount: 0,
@@ -44,7 +44,7 @@ const Editform = () => {
 
         // ✅ Set formData properly (Keep existing image URLs)
         setFormData({
-          PlaceName: propertyData.PlaceName || "",
+          placeName: propertyData.placeName || "",
           buildingName: propertyData.buildingName || "",
           buildingPic: propertyData.buildingPic || null, // ✅ Keep existing URL
           propertyCount: propertyData.properties?.length || 0,
@@ -249,7 +249,7 @@ const Editform = () => {
     const submitData = new FormData()
 
     // Append property details
-    submitData.append("propertyName", formData.PlaceName)
+    submitData.append("propertyName", formData.placeName)
     submitData.append("buildingName", formData.buildingName)
     submitData.append("propertyCount", formData.propertyCount)
 
@@ -431,14 +431,14 @@ const Editform = () => {
                       whileHover={{ scale: 1.01 }}
                       transition={{ type: "spring", stiffness: 400, damping: 17 }}
                     >
-                      <label htmlFor="PlaceName" className="block text-sm font-medium text-blue-900 mb-1">
+                      <label htmlFor="placeName" className="block text-sm font-medium text-blue-900 mb-1">
                         Property Location / Area Name
                       </label>
                       <input
                         type="text"
-                        id="PlaceName"
-                        name="PlaceName"
-                        value={formData?.PlaceName || ""}
+                        id="placeName"
+                        name="placeName"
+                        value={formData.placeName || ""}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                         placeholder="Enter property name"
