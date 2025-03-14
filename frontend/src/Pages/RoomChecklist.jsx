@@ -11,27 +11,85 @@ import "react-h5-audio-player/lib/styles.css"
 const checklistItems = [
   {
     id: 1,
-    name: "Bed Setup",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&q=80&w=500",
+    name: "Mopping & Floor Cleaning",
+    image: "https://koparoclean.com/cdn/shop/articles/disinfecting-home_1200x1200.jpg?v=1719811412",
   },
   {
     id: 2,
-    name: "Coffee Machine",
-    image:
-      "https://images.unsplash.com/photo-1620807773206-49c1f2957417?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Fresh Bedding Setup",
+    image: "https://tii.imgix.net/production/articles/3466/abf5c4bd-cab8-415b-a4c5-40bb4ec2fdaf.jpg?auto=compress&fit=crop&auto=format",
   },
   {
     id: 3,
-    name: "Utensils",
-    image:
-      "https://images.unsplash.com/photo-1557687790-902ede7ab58c?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Extra Bedding Arranged",
+    image: "https://images.squarespace-cdn.com/content/v1/534bbd08e4b0b891fcd7f20a/1422249973785-3VWAJB7D32XC8XZX12P0/small-linen-cupboard.jpg",
   },
   {
     id: 4,
-    name: "WiFi Card",
-    image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&q=80&w=500",
+    name: "Towels Placed",
+    image: "https://raencomills.com/wp-content/uploads/2020/07/33aa.jpg",
   },
-]
+  {
+    id: 5,
+    name: "Bathroom Cleaning Completed",
+    image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI2MDkxNTQ1ODMwMjk1OTkzOA%3D%3D/original/876fd3b0-80b5-4fdb-a5c5-ed467e3551fd.jpeg?im_w=1440",
+  },
+  {
+    id: 6,
+    name: "Shampoo & Body Wash Refilled",
+    image: "https://image.made-in-china.com/202f0j00ZeBbmaltERqs/Non-Disposable-Bath-Set-Custom-Shampoo-and-Conditioner-Hotel-Toiletries-Packaging-Hotel-Room-Amenities.webp",
+  },
+  {
+    id: 7,
+    name: "Hand Wash Refilled",
+    image: "https://5.imimg.com/data5/TL/AX/IK/SELLER-91740757/liquid-hand-wash-500x500.jpg",
+  },
+  {
+    id: 8,
+    name: "TV & AC Remote Placed and Working",
+    image: "https://img.freepik.com/premium-photo/two-remotes-from-tv-tv-tuner-yellow_164357-5167.jpg",
+  },
+  {
+    id: 9,
+    name: "Hair Dryer Available",
+    image: "https://havells.com/media/catalog/product/cache/844a913d283fe95e56e39582c5f2767b/1/2/1200x1200_havels_day10655_copy.jpg",
+  },
+  {
+    id: 10,
+    name: "Iron Available",
+    image: "https://havells.com/media/catalog/product/cache/844a913d283fe95e56e39582c5f2767b/g/h/ghgdicsg100.jpg",
+  },
+  {
+    id: 11,
+    name: "4 Water Glasses Provided",
+    image: "https://assets.ajio.com/medias/sys_master/root/20231017/l8CY/652e7e54afa4cf41f54a239b/-473Wx593H-469546784-transparent-MODEL.jpg",
+  },
+  {
+    id: 12,
+    name: "4 Wine Glasses Provided",
+    image: "https://www.mikasa.com/cdn/shop/products/napoli-set-of-4-wine-glasses_5136540_1.jpg?v=1607435208",
+  },
+  {
+    id: 13,
+    name: "4 Beer Glasses Provided",
+    image: "https://rukminim2.flixcart.com/image/850/1000/kdakakw0/glass/n/w/w/beer-400-ml-beer-juice-clear-set-of-4-glass-mug-400-ml-pack-of-original-imafu7hckmxuznj9.jpeg?q=90&crop=false",
+  },
+  {
+    id: 14,
+    name: "Water Purifier Switched On & Filled",
+    image: "https://havells.com/media/catalog/product/cache/844a913d283fe95e56e39582c5f2767b/g/h/ghwuaus030.jpg",
+  },
+  {
+    id: 15,
+    name: "Washing Machine Empty & Clean",
+    image: "https://t3.ftcdn.net/jpg/03/07/20/90/360_F_307209015_NBNPCNEyB7VNLSMCUNzYhR9YIhoneY6r.jpg",
+  },
+  {
+    id: 16,
+    name: "Sugar, Tea, and Coffee Stocked",
+    image: "https://www.nestroots.com/cdn/shop/products/Woodenjarsforkeepingspicesmasalaforkitchenwithlidcanisterforhomekitchenwithlidmouthfreshnerjarsboxfordiningtable_d9ff1de6-703c-4433-aa25-40928dd6a141.jpg?v=1733900104",
+  },
+];
 
 const RoomChecklist = () => {
   const { id } = useParams()
