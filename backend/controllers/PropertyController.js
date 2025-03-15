@@ -146,6 +146,7 @@ export const updateRoom = async (req, res) => {
       staff,
       staffWhoUpdated,
       notes,
+      allChecklistItems: receivedAllChecklistItems,
     } = req.body;
 
     // ✅ Parse JSON fields (since they were sent as strings)
@@ -153,7 +154,9 @@ export const updateRoom = async (req, res) => {
     const parsedStaff = staff ? JSON.parse(staff) : [];
 
     // ✅ Get the status based on checklist
-    const allChecklistItems = ["Bed Setup", "Coffee Machine", "Utensils", "WiFi Card"];
+    const allChecklistItems = receivedAllChecklistItems 
+    ? JSON.parse(receivedAllChecklistItems) 
+    : ["Bed Setup", "Coffee Machine", "Utensils", "WiFi Card"];
     let status = "Not Ready";
     let missingItems = [...allChecklistItems];
 

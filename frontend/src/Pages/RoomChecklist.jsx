@@ -214,6 +214,7 @@ const RoomChecklist = () => {
       formData.append("staff", JSON.stringify(roomData.staff));
       formData.append("staffWhoUpdated", roomData.staffwhoupdated);
       formData.append("notes", notes);
+      formData.append("allChecklistItems", JSON.stringify(checklistItems.map(item => item.name)));
 
       // If there is a new voice recording, convert the Blob URL to a File
       if (audioURL && audioURL.startsWith('blob:')) {
