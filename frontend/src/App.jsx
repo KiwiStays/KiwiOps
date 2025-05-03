@@ -29,8 +29,8 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Login />} />
-        <Route path="/homepage" element={adminToken ? <Homepage />: <Login/>} />
-        <Route path="/mainpage" element={ adminToken ? <Mainpage /> : <Login/>} />
+        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/mainpage" element={  <Mainpage />} />
         <Route path="/maintenance" element={ <Maintenancepage />} />
         <Route path="/adminpage" element={<Adminpage />} />
         <Route path="/propertymaintain" element={ <Propertymaintain />} />

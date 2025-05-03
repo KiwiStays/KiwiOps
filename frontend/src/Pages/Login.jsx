@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AdminContext } from '../Context/AdminContext';
 import axios from 'axios';
 
@@ -30,6 +30,15 @@ const Login = () => {
   
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        
+        <header
+          className="bg-blue-500 text-white text-center py-4 w-full fixed top-0 left-0 z-10 flex gap-10 justify-center items-center">
+          <Link to="/maintenance">Mantainence Page</Link>
+          <Link to="/homepage">Property Page</Link>
+
+            
+          </header>
+        
         <div className="bg-white p-8 rounded-lg shadow-md w-96">
           <h2 className="text-2xl mb-6 text-center">Admin Login</h2>
           {error && <div className="text-red-500 mb-4">{error}</div>}

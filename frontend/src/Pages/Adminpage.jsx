@@ -2,11 +2,16 @@
 
 import { useContext } from "react"
 import { AdminContext } from "../Context/AdminContext"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Building2, ClipboardList, LogOut, Settings, Users, Home } from "lucide-react"
 
 const AdminPage = () => {
   const { logout } = useContext(AdminContext)
+  const navigate = useNavigate()
+  const handleLogout = () => {
+    logout()
+    navigate("/")
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800">
@@ -25,7 +30,7 @@ const AdminPage = () => {
             <span>Home</span>
           </Link>
           <button
-            onClick={logout}
+            onClick={handleLogout}
             className="flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-700 text-white px-4 py-2 rounded-lg hover:from-red-600 hover:to-red-800 transition-all shadow-lg hover:shadow-xl"
           >
             <LogOut className="h-5 w-5" />

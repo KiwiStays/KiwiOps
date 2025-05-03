@@ -16,6 +16,12 @@ const Homepage = () => {
   const {logout} = useContext(AdminContext)
 
 
+  const handleLogout = () => {
+    logout()
+    navigate("/")
+  }
+
+
   useEffect(() => {
     axios
       .get("/api/property/getproperty")
@@ -119,7 +125,7 @@ const Homepage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 py-10 px-4">
     <div>
-      <button onClick={logout} className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">  
+      <button onClick={handleLogout} className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">  
         Logout
       </button>
     </div>

@@ -25,7 +25,7 @@ import {
 } from "lucide-react"
 
 const MaintenancePage = () => {
-  const { logout, darkMode } = useContext(AdminContext)
+  const { logout, darkMode, adminToken } = useContext(AdminContext)
   const navigate = useNavigate()
   const [properties, setProperties] = useState([])
   const [loading, setLoading] = useState(true)
@@ -187,6 +187,11 @@ const MaintenancePage = () => {
   const goToPage = (pageNumber) => {
     setCurrentPage(pageNumber)
     window.scrollTo(0, 0)
+  }
+
+  const handleLogout = () => {
+    logout()
+    navigate("/")
   }
 
   // Filter locations based on search input
@@ -534,6 +539,15 @@ const MaintenancePage = () => {
             >
               <X className="w-5 h-5" />
             </button>
+
+
+            {adminToken && (<button
+            onClick={handleLogout}
+            className="flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-700 text-white px-4 py-2 rounded-lg hover:from-red-600 hover:to-red-800 transition-all shadow-lg hover:shadow-xl"
+            >
+            Logout
+
+            </button>)}
           </div>
 
           {/* Location Filter Section */}
