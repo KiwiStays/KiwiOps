@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 import axios from "axios"
-import { AdminContext } from "../context/AdminContext.jsx"
+import { AdminContext } from "../Context/AdminContext.jsx"
 import {
   ClipboardCheck,
   Trash2,
