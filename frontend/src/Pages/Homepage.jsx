@@ -6,7 +6,7 @@ import { ChevronDown, Loader2, Pencil, MapPin, Building2, Home } from "lucide-re
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { Link } from "react-router-dom"
-import { AdminContext } from "../Context/AdminContext"
+import { AdminContext } from "../context/AdminContext.jsx"
 
 const Homepage = () => {
   const [prop, setProp] = useState([])
