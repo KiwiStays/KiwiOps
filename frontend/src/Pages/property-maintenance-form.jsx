@@ -3,7 +3,7 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect, useContext } from "react"
 import axios from "axios"
-import { AdminContext } from "../context/AdminContext"
+import { AdminContext } from "../context/AdminContext.jsx"
 
 // Main component that combines all functionality
 export default function PropertyMaintenanceForm() {
