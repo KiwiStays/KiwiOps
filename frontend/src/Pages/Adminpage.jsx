@@ -1,7 +1,7 @@
 "use client"
 
 import { useContext } from "react"
-import { AdminContext } from "../context/AdminContext.jsx"
+import { AdminContext } from "../Context/AdminContext.jsx"
 import { Link, useNavigate } from "react-router-dom"
 import { Building2, ClipboardList, LogOut, Settings, Users, Home } from "lucide-react"
 
