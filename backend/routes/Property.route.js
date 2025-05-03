@@ -2,7 +2,8 @@ import { Router } from "express";
 import upload from "../middlewares/multer.js";
 import { upload_voice } from "../middlewares/multer.js";
 
-import { createProperty, deleteRoom, getAllProperties, getPropertyById, getRoomInfo, getSingleProperty, updateProperty, updateRoom } from "../controllers/PropertyController.js";
+import { AdminPropertymaintinCreate, createProperty, deleteProperty, deleteRoom, EditSinglePropertyAdmin, getAllProperties, getAllPropertiesAdmin, getPropertyById, getRoomInfo, getSingleProperty, getSinglePropertyAdmin, updateProperty, updateRoom, UpdateSinglePropertyAdmin } from "../controllers/PropertyController.js";
+import { Admin } from "mongodb";
 
 const router = Router();
 
@@ -27,6 +28,14 @@ router.route("/roominfo/:id").get(getRoomInfo);
 router.route("/rooms/update/:roomId").post(upload_voice.single("voiceNote"), updateRoom);
 router.route("/room/delete/:id/:propid").delete(deleteRoom);
 
+// Admin side maintainence routes
+
+router.route("/create/maintanence/property").post(upload.single("image"), AdminPropertymaintinCreate);
+router.route("/get/maintanence/property").get(getAllPropertiesAdmin);
+router.route("/maintain/:id").get(getSinglePropertyAdmin);
+router.route("/maintain/:id").put(upload.any(),UpdateSinglePropertyAdmin);
+router.route("/update/maintanence/:id").put(upload.any(),EditSinglePropertyAdmin);
+router.route("/delete/maintanence/:id").delete(deleteProperty);
 // router.route("/export/google-sheets").post(handler);
 
 export default router;

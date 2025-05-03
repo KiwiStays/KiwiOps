@@ -2,12 +2,13 @@ import express from 'express';
 import cors from 'cors';
 import  { v2 as cloudinary } from 'cloudinary';
 import PropertyRouter from "../routes/Property.route.js";
+import AuthRouter from "../routes/Auth.route.js";
 
 
 const app = express();
 app.use(express.json({limit: '10mb'}));
 app.use(cors({
-  origin: ["https://kiwiops.in", "https://api.kiwiops.in"],
+  origin: ["https://kiwiops.in", "https://api.kiwiops.in","http://localhost:5173"],
   credentials: true
 }));
 
@@ -24,7 +25,7 @@ cloudinary.config({
 
 // app.use("/api/guest", Guestrouter);
 app.use("/api/property", PropertyRouter);
-// app.use("/api/auth/", AuthRouter);
+app.use("/api/auth/", AuthRouter);
 
 
 

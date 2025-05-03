@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import { v4 as uuidv4 } from "uuid";
 
-export const uploadToCloudinary = async (localFilePath, originalname) => {
+export const uploadToCloudinary = async (localFilePath, folderName) => {
     try {
         if (!localFilePath || !fs.existsSync(localFilePath)) {
             console.error("❌ File path is missing or invalid:", localFilePath);
@@ -12,16 +12,20 @@ export const uploadToCloudinary = async (localFilePath, originalname) => {
 
         // Normalize path to prevent Windows/Linux issues
         const normalizedPath = path.resolve(localFilePath).replace(/\\/g, "/");
+        
+        // Generate a unique ID for this upload
+        const uniqueId = uuidv4();
+        
+        // Create a unique public_id using UUID to prevent overwriting
+        const publicId = `property_images/${uniqueId}`;
 
-        // ✅ Ensure originalname exists, otherwise set a default name
-        const originalFileName = originalname ? originalname.split('.')[0] : `unknown_file_${uuidv4()}`;
+        console.log(`🚀 Uploading file: ${normalizedPath} as ${publicId}`);
 
-        console.log(`🚀 Uploading file: ${normalizedPath} as ${originalFileName}`);
-
-        // Upload to Cloudinary
+        // Upload to Cloudinary with unique ID
         const response = await cloudinary.uploader.upload(normalizedPath, {
             resource_type: "auto",
-            public_id: `property_images/${originalFileName}`,
+            public_id: publicId,
+            overwrite: false, // Prevent overwriting
             chunk_size: 6 * 1024 * 1024,
         });
 
@@ -38,8 +42,7 @@ export const uploadToCloudinary = async (localFilePath, originalname) => {
             console.warn(`⚠️ File already deleted or not found: ${normalizedPath}`);
         }
         
-
-        return response.secure_url;  // ✅ Return only the URL
+        return response.secure_url;  // Return only the URL
 
     } catch (error) {
         console.error("❌ Cloudinary upload error:", error.message);

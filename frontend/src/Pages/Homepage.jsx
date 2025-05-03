@@ -1,17 +1,20 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Loader2, Pencil, MapPin, Building2, Home } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import { AdminContext } from "../Context/AdminContext"
 
 const Homepage = () => {
   const [prop, setProp] = useState([])
   const [loading, setLoading] = useState(true)
   const [expanded, setExpanded] = useState({})
   const navigate = useNavigate()
+  const {logout} = useContext(AdminContext)
+
 
   useEffect(() => {
     axios
@@ -115,6 +118,11 @@ const Homepage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 py-10 px-4">
+    <div>
+      <button onClick={logout} className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">  
+        Logout
+      </button>
+    </div>
       <div className="max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
